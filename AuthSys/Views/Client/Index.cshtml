@@ -1,0 +1,32 @@
+﻿@model List<AuthSys.Models.Domain.Client>
+@{
+}
+<h1>List of Customer</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNumer</th>
+            <th>Date Of Bridthay</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Id</td>
+                <td>@client.Name</td>
+                <td>@client.Email</td>
+                <td>@client.PhoneNumber</td>
+                <td>@client.DateOfBirdth.ToString("dd-MM-yyyy")</td>
+                <td>@client.Statut</td>
+                <td><a href="Client/View/@client.Id"> View</a></td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model AuthSys.Models.AddClientModelView
+@{
+}
+<h1> Add Customer</h1>
+
+<form method="post" action="Add">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">PhoneNumber</label>
+        <input type="number" class="form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirdth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Statut</label>
+        <input type="text" class="form-control" asp-for="Statut">
+    </div>
+
+    <button type="submit" class="btn btn-primary">AddClient</button>
+</form>

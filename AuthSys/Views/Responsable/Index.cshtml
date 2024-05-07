@@ -1,0 +1,31 @@
+﻿@model List<AuthSys.Models.Domain.Responsables>
+@{
+}
+<h1>List of Responsible</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>PhoneNumer</th>
+            <th>Date Of Bridthay</th>
+            <th>NameOfEntreprise</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var responsable in Model)
+        {
+            <tr>
+                <td>@responsable.Id</td>
+                <td>@responsable.Name</td>
+                <td>@responsable.Email</td>
+                <td>@responsable.PhoneNumber</td>
+                <td>@responsable.DateOfBirdth.ToString("dd-MM-yyyy")</td>
+                <td>@responsable.NameEntreprise</td>
+                <td><a href="Responsable/View/@responsable.Id"> View</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

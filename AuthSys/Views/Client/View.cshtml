@@ -1,0 +1,36 @@
+﻿@model AuthSys.Models.UpdateClient
+@{
+}
+<h1> Edit Customer</h1>
+
+<form method="post" action="View">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">PhoneNumber</label>
+        <input type="number" class="form-control" asp-for="PhoneNumber">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirdth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Statut</label>
+        <input type="text" class="form-control" asp-for="Statut">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit Customer</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Client">Delete </button>
+
+</form>
+

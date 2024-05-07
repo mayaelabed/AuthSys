@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    #sidebar {
+      background: #343a40;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    #sidebar a {
+      color: #fff;
+    }
+
+    #content {
+      transition: margin-left .3s;
+      padding: 16px;
+    }
+
+   
+      #sidebar.active {
+        margin-left: 0;
+      }
+      #content {
+        margin-left: 0;
+      }
+    }
+
+    .chart-container {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+  <!-- Page Content -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button type="button" id="sidebarCollapse" class="btn btn-info">
+        <i class="fas fa-align-left"></i>
+                <span>
+                    Review statistics
+                </span>
+      </button>
+    </nav>
+
+    <div class="container-fluid">
+      <h2>Dashboard</h2>
+      
+      <!-- Sample Chart -->
+      <div class="chart-container">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Sample Chart Data
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May'],
+        datasets: [{
+          label: 'Monthly Reviw',
+          data: [50, 60, 45, 70, 80],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Toggle Sidebar
+    $("#sidebarCollapse").on("click", function() {
+      $("#sidebar").toggleClass("active");
+    });
+  </script>
+
+</body>
+</html>
